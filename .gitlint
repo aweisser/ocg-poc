@@ -1,0 +1,22 @@
+[general]
+ignore-merge-commits=false
+
+[title-max-length]
+line-length=72
+
+[title-must-not-contain-word]
+# Comma-separated list of words that should not occur in the title. Matching is case
+# insensitive. It's fine if the keyword occurs as part of a larger word (so "WIPING"
+# will not cause a violation, but "WIP: my title" will.
+words=wip,draft
+
+[title-match-regex]
+# python like regex (https://docs.python.org/2/library/re.html) that the
+# commit-msg title must be matched to.
+# Note that the regex can contradict with other rules if not used correctly
+# (e.g. title-must-not-contain-word).
+regex=^[A-Z].*
+
+[B1]
+# B1 = body-max-line-length
+line-length=72

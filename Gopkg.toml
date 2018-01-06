@@ -1,0 +1,36 @@
+
+[[constraint]]
+  name = "github.com/gorilla/mux"
+  version = "*"
+
+[[constraint]]
+  name = "github.com/pkg/errors"
+  version = "*"
+
+[[constraint]]
+  name = "github.com/stretchr/testify"
+  version = "*"
+
+[[constraint]]
+  name = "github.com/spf13/cobra"
+  version = "*"
+
+[[constraint]]
+  name = "github.com/spf13/viper"
+  version = "*"
+
+[[constraint]]
+  branch = "master"
+  name = "gerrit.iternity.intern/aravindavk/glustercli.git"
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/howeyc/gopass"
+
+[[constraint]]
+  name = "github.com/PuerkitoBio/goquery"
+  version = "*"
+
+[[constraint]]
+  name = "github.com/goadesign/goa"
+  version = "*"

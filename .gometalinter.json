@@ -1,0 +1,27 @@
+{
+  "Enable": [
+    "deadcode",
+    "errcheck",
+    "gas",
+    "goconst",
+    "gocyclo",
+    "golint",
+    "gotype",
+    "gotypex",
+    "ineffassign",
+    "interfacer",
+    "lll",
+    "maligned",
+    "megacheck",
+    "misspell",
+    "structcheck",
+    "unconvert",
+    "varcheck",
+    "vet",
+    "vetshadow"
+  ],
+  "LineLength": 100,
+  "Exclude": [
+    ".*_moq_test.go"
+  ]
+}
