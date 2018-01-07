@@ -3,6 +3,8 @@
 
 # ocg-poc
 
+Welcome to OCG.
+
 ## Setup
 
 ### Install dependencies for development
