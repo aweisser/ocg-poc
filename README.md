@@ -16,3 +16,14 @@
 
 ### Install dependencies for production (e.g. those used as imports)
 	dep ensure
+
+## First Steps
+
+### Run tests
+	go test -v -cover ./...
+
+### Exeute gometalinter for all dirs
+	gometalinter --config=.gometalinter.json `find . -not -path "./vendor" -not -path "./vendor/*" -type d`
+	
+### Execute main command
+	go run cmd/ocg-rest-server/main.go
