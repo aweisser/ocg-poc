@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/aweisser/ocg-poc.svg?branch=master)](https://travis-ci.org/aweisser/ocg-poc)
+[![Go Report Card](https://goreportcard.com/badge/github.com/aweisser/ocg-poc)](https://goreportcard.com/report/github.com/aweisser/ocg-poc)
+
 # ocg-poc
 
 ## Setup
