@@ -2,6 +2,7 @@ package controller
 
 import (
 	"github.com/aweisser/ocg-poc/cmd/ocg-rest-server/app"
+	"github.com/aweisser/ocg-poc/domain/ocg"
 	"github.com/goadesign/goa"
 )
 
@@ -21,11 +22,17 @@ func (c *MemberController) Show(ctx *app.ShowMemberContext) error {
 
 	// Put your logic here
 
+	// TODO Call a usecase to get the member
+	member := &ocg.Member{
+		Name: "johndoe" + ctx.MemberID,
+	}
+
+	// Create response model
 	res := &app.MemberSingle{
 		Data: &app.Member{
 			ID: &ctx.MemberID,
 			Attributes: &app.MemberAttributes{
-				Name: "johndoe" + ctx.MemberID,
+				Name: member.Name,
 			},
 		},
 	}
