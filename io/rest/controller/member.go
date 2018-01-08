@@ -1,8 +1,8 @@
 package controller
 
 import (
-	"github.com/aweisser/ocg-poc/cmd/ocg-rest-server/app"
-	"github.com/aweisser/ocg-poc/domain/ocg"
+	"github.com/aweisser/ocg-poc/io/rest"
+	"github.com/aweisser/ocg-poc/io/rest/app"
 	"github.com/goadesign/goa"
 )
 
@@ -21,18 +21,14 @@ func (c *MemberController) Show(ctx *app.ShowMemberContext) error {
 	// MemberController_Show: start_implement
 
 	// Put your logic here
+	memberByID, _ := rest.MemberByID(ctx)
+	m := memberByID.Get(ctx.MemberID)
 
-	// TODO Call a usecase to get the member
-	member := &ocg.Member{
-		Name: "johndoe" + ctx.MemberID,
-	}
-
-	// Create response model
 	res := &app.MemberSingle{
 		Data: &app.Member{
 			ID: &ctx.MemberID,
 			Attributes: &app.MemberAttributes{
-				Name: member.Name,
+				Name: m.Name,
 			},
 		},
 	}

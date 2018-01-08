@@ -4,8 +4,8 @@
 //
 // Command:
 // $ goagen
-// --design=github.com/aweisser/ocg-poc/cmd/ocg-rest-server/design
-// --out=$(GOPATH)\src\github.com\aweisser\ocg-poc\cmd\ocg-rest-server\
+// --design=github.com/aweisser/ocg-poc/io/rest/design
+// --out=$(GOPATH)\src\github.com\aweisser\ocg-poc\io\rest\
 // --version=v1.1.0-dirty
 
 package app

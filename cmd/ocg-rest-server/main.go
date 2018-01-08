@@ -3,8 +3,12 @@
 package main
 
 import (
-	"github.com/aweisser/ocg-poc/cmd/ocg-rest-server/app"
-	"github.com/aweisser/ocg-poc/cmd/ocg-rest-server/controller"
+	"context"
+
+	"github.com/aweisser/ocg-poc/io/rest"
+	"github.com/aweisser/ocg-poc/io/rest/app"
+	"github.com/aweisser/ocg-poc/io/rest/controller"
+	"github.com/aweisser/ocg-poc/usecase/member"
 	"github.com/goadesign/goa"
 	"github.com/goadesign/goa/middleware"
 )
@@ -12,6 +16,9 @@ import (
 func main() {
 	// Create service
 	service := goa.New("ocg")
+
+	// Create and inject business services through special context
+	service.Context = newRestServerContext(service.Context)
 
 	// Mount middleware
 	service.Use(middleware.RequestID())
@@ -28,4 +35,9 @@ func main() {
 		service.LogError("startup", "err", err)
 	}
 
+}
+
+// newRestServerContext creates a context for the OCG Rest Server where all necessary business services are injected.
+func newRestServerContext(parentCtx context.Context) context.Context {
+	return context.WithValue(parentCtx, rest.MemberByIDKey, &member.ByID{})
 }
