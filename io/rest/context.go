@@ -10,7 +10,7 @@ import (
 type contextKey string
 
 // MemberByIDKey provides access to a XYZService instance
-var MemberByIDKey = contextKey("member.ByID")
+const MemberByIDKey = contextKey("member.ByID")
 
 // GetMemberByID extracts a service instance from the the given Context
 // The first return value may be nil, if the service could not be extracted.
