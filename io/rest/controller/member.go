@@ -21,8 +21,8 @@ func (c *MemberController) Show(ctx *app.ShowMemberContext) error {
 	// MemberController_Show: start_implement
 
 	// Put your logic here
-	memberByID, _ := rest.MemberByID(ctx)
-	m := memberByID.Get(ctx.MemberID)
+	pi, _ := rest.GetMemberProfileInteraction(ctx)
+	m := pi.LoadByID(ctx.MemberID)
 
 	res := &app.MemberSingle{
 		Data: &app.Member{

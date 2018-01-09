@@ -5,6 +5,7 @@ package main
 import (
 	"context"
 
+	"github.com/aweisser/ocg-poc/io/dummy"
 	"github.com/aweisser/ocg-poc/io/rest"
 	"github.com/aweisser/ocg-poc/io/rest/app"
 	"github.com/aweisser/ocg-poc/io/rest/controller"
@@ -39,5 +40,8 @@ func main() {
 
 // newRestServerContext creates a context for the OCG Rest Server where all necessary business services are injected.
 func newRestServerContext(parentCtx context.Context) context.Context {
-	return context.WithValue(parentCtx, rest.MemberByIDKey, &member.ByID{})
+	return context.WithValue(parentCtx, rest.MemberProfileKey,
+		&member.ProfileInteraction{
+			MemberRepo: &dummy.Repo{},
+		})
 }
