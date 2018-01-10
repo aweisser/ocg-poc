@@ -2,10 +2,74 @@
 
 
 [[projects]]
+  branch = "master"
+  name = "github.com/armon/go-metrics"
+  packages = ["."]
+  revision = "7aa49fde808223f8dadfdbfd3a20ff6c19e5f9ec"
+
+[[projects]]
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
   revision = "346938d642f2ec3594ed81d874461961cd0faa76"
   version = "v1.1.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/dimfeld/httppath"
+  packages = ["."]
+  revision = "ee938bf735983d53694d79138ad9820efff94c92"
+
+[[projects]]
+  name = "github.com/dimfeld/httptreemux"
+  packages = ["."]
+  revision = "8cc36ee10f84b82d0742ffcab770815c7d3f9ad7"
+  version = "v5.0.0"
+
+[[projects]]
+  name = "github.com/goadesign/goa"
+  packages = [
+    ".",
+    "client",
+    "cors",
+    "design",
+    "design/apidsl",
+    "dslengine",
+    "goatest",
+    "middleware",
+    "uuid"
+  ]
+  revision = "fc29b77a218fb9e190849c81911ed12d25e771de"
+  version = "v1.3.1"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/gopherjs/gopherjs"
+  packages = ["js"]
+  revision = "444abdf920945de5d4a977b572bcc6c674d1e4eb"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/hashicorp/go-immutable-radix"
+  packages = ["."]
+  revision = "8aac2701530899b64bdea735a1de8da899815220"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/hashicorp/golang-lru"
+  packages = ["simplelru"]
+  revision = "0a025b7e63adc15a622f29b0b2c4c3848243bbf6"
+
+[[projects]]
+  name = "github.com/jtolds/gls"
+  packages = ["."]
+  revision = "77f18212c9c7edc9bd6a33d383a7b545ce62f064"
+  version = "v4.2.1"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/manveru/faker"
+  packages = ["."]
+  revision = "9fbc68a78c4dbc7914e1a23f88f126bea4383b97"
 
 [[projects]]
   name = "github.com/pmezard/go-difflib"
@@ -14,14 +78,52 @@
   version = "v1.0.0"
 
 [[projects]]
+  name = "github.com/satori/go.uuid"
+  packages = ["."]
+  revision = "879c5887cd475cd7864858769793b2ceb0d44feb"
+  version = "v1.1.0"
+
+[[projects]]
+  name = "github.com/smartystreets/assertions"
+  packages = [
+    ".",
+    "internal/go-render/render",
+    "internal/oglematchers"
+  ]
+  revision = "0b37b35ec7434b77e77a4bb29b79677cced992ea"
+  version = "1.8.1"
+
+[[projects]]
+  name = "github.com/smartystreets/goconvey"
+  packages = [
+    "convey",
+    "convey/gotest",
+    "convey/reporting"
+  ]
+  revision = "9e8dc3f972df6c8fcc0375ef492c24d0bb204857"
+  version = "1.6.3"
+
+[[projects]]
   name = "github.com/stretchr/testify"
   packages = ["assert"]
   revision = "b91bfb9ebec76498946beb6af7c0230c7cc7ba6c"
   version = "v1.2.0"
 
+[[projects]]
+  branch = "master"
+  name = "github.com/zach-klippenstein/goregen"
+  packages = ["."]
+  revision = "795b5e3961ea1912fde60af417ad85e86acc0d6a"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/net"
+  packages = ["websocket"]
+  revision = "434ec0c7fe3742c984919a691b2018a6e9694425"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "842097f6d2c64c2bb3c2116bea7b49bb494aad82bc9caca262ad649c489e7482"
+  inputs-digest = "b8837580d345cfe63a768579bc3a0f856a245521dfbcad08a5d27d0aac65dda0"
   solver-name = "gps-cdcl"
   solver-version = 1

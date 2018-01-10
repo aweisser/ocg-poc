@@ -22,3 +22,7 @@
 [[constraint]]
   name = "github.com/goadesign/goa"
   version = "*"
+  
+[[constraint]]
+  name = "github.com/smartystreets/goconvey"
+  version = "*"

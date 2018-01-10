@@ -22,7 +22,7 @@ func (c *MemberController) Show(ctx *app.ShowMemberContext) error {
 
 	// Put your logic here
 	pi, _ := rest.GetMemberProfileInteraction(ctx)
-	m := pi.LoadByID(ctx.MemberID)
+	m, _ := pi.LoadByID(ctx.MemberID)
 
 	res := &app.MemberSingle{
 		Data: &app.Member{

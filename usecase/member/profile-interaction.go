@@ -14,6 +14,11 @@ type memberRepo interface {
 }
 
 // LoadByID retrieves a Member bei its ID.
-func (pi *ProfileInteraction) LoadByID(id interface{}) *ocg.Member {
-	return pi.MemberRepo.GetMemberByID(id)
+func (pi *ProfileInteraction) LoadByID(id interface{}) (*ocg.Member, bool) {
+	m := pi.MemberRepo.GetMemberByID(id)
+	found := true
+	if m == nil {
+		found = false
+	}
+	return m, found
 }
