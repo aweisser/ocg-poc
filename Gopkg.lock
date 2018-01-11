@@ -78,10 +78,10 @@
   version = "v1.0.0"
 
 [[projects]]
+  branch = "master"
   name = "github.com/satori/go.uuid"
   packages = ["."]
-  revision = "879c5887cd475cd7864858769793b2ceb0d44feb"
-  version = "v1.1.0"
+  revision = "36e9d2ebbde5e3f13ab2e25625fd453271d6522e"
 
 [[projects]]
   name = "github.com/smartystreets/assertions"
@@ -124,6 +124,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "b8837580d345cfe63a768579bc3a0f856a245521dfbcad08a5d27d0aac65dda0"
+  inputs-digest = "bc45af1db278c999fb89a1939bf3c3ee9745c15f3aad83407bdb09ac4c9f94f8"
   solver-name = "gps-cdcl"
   solver-version = 1
