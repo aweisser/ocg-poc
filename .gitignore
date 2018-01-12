@@ -16,3 +16,4 @@
 # Other project-local folders
 /vendor
 /checkstyle.xml
+token
