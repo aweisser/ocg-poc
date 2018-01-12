@@ -34,3 +34,7 @@
 [[constraint]]
   name = "github.com/shurcooL/githubql"
   branch = "master"
+
+[[constraint]]
+  name = "github.com/google/go-github"
+  branch = "master"

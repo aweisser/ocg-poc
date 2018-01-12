@@ -49,6 +49,18 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/google/go-github"
+  packages = ["github"]
+  revision = "c988f775700b9ab14b5acb7502046fa341daf82d"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/google/go-querystring"
+  packages = ["query"]
+  revision = "53e6ce116135b80d037921a7fdd5138cf32d7a8a"
+
+[[projects]]
+  branch = "master"
   name = "github.com/gopherjs/gopherjs"
   packages = ["js"]
   revision = "444abdf920945de5d4a977b572bcc6c674d1e4eb"
@@ -179,6 +191,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "9f691b484ee5ad7d5fd15dfcdb49dd5812e1064e14869cb42491d636f505a663"
+  inputs-digest = "14a52044419a04b415d9719c0eb4e9807902365acdaade467153e94dcfcd62ed"
   solver-name = "gps-cdcl"
   solver-version = 1
