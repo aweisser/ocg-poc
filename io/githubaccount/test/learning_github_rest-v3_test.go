@@ -32,9 +32,17 @@ func TestGitHubRestAPI(t *testing.T) {
 		So(client, ShouldNotBeNil)
 
 		Convey("When requesting the users login", func() {
-			u, _, _ := client.Users.Get(ctx, login)
+			u, _, err := client.Users.Get(ctx, login)
 
 			Convey("No error is returned", func() {
+				So(err, ShouldBeNil)
+			})
+
+			Convey("The user is not nil", func() {
+				So(u, ShouldNotBeNil)
+			})
+
+			Convey("The user email corresponds to the env variable GITHUB_EMAIL", func() {
 				So(*u.Email, ShouldEqual, email)
 			})
 
