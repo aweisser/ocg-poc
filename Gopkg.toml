@@ -22,15 +22,7 @@
 [[constraint]]
   name = "github.com/goadesign/goa"
   version = "v1.3.1"
-<<<<<<< HEAD
-  
-=======
 
-[[constraint]]
-  name = "github.com/satori/go.uuid"
-  branch = "master"
-
->>>>>>> 79f27f76d884bd4d91f8fb9ddd5659ff723bdfbc
 [[constraint]]
   name = "github.com/satori/go.uuid"
   branch = "master"
