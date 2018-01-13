@@ -3,7 +3,7 @@
 
 # ocg-poc
 
-Welcome to OCG.
+Welcome to OCG. This is just a proof of concept.
 
 ## Setup
 
