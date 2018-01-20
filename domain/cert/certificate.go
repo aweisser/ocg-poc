@@ -40,13 +40,13 @@ func newActivityCertificate(activity *Activity) (*ActivityCertificate, error) {
 	return c, nil
 }
 
-// ID is a globaly unique ID. Perhaps a UUID?
+// ID is a globally unique ID. Perhaps a UUID?
 type ID interface{}
 
 type ActivityCertificate struct {
 	id       ID       // Globally unique id. Can only be set at creation time.
-	activity Activity // Semi final attribute (immutable after beeing set)
-	ownerID  ID       // Semi final attribte (immutable after beeing set)
+	activity Activity // Semi final attribute (immutable after being set)
+	ownerID  ID       // Semi final attribte (immutable after being set)
 }
 
 // An ActivityCertificate can only be assigned once
