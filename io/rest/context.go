@@ -6,6 +6,10 @@ import (
 	"github.com/aweisser/ocg-poc/usecase/member"
 )
 
+//go:generate goagen swagger -d github.com/aweisser/ocg-poc/io/rest/design
+//go:generate goagen app -d github.com/aweisser/ocg-poc/io/rest/design
+//go:generate goagen controller -d github.com/aweisser/ocg-poc/io/rest/design -o controller/ --app-pkg github.com/aweisser/ocg-poc/io/rest/app
+
 // contextKey should be used as a component specific key type to access values in a context.
 type contextKey string
 

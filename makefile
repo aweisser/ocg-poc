@@ -1,6 +1,6 @@
 BINARY_NAME_LINUX=ocg-rest-linux-amd64
 
-default: clean deps test lint release
+default: clean deps generate test lint release
 
 test:
 	go test -v -cover ./...
@@ -23,5 +23,7 @@ deps:
 	dep ensure
 	gometalinter --install
 
+generate:
+	go generate ./...
 
-.PHONY test lint clean linux release:
+.PHONY test lint clean linux deps generate release:
