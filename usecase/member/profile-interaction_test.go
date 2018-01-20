@@ -26,9 +26,9 @@ func TestMemberProfileInteraction(t *testing.T) {
 			},
 		}
 		Convey("When trying to get a member profile by id", func() {
-			member, found := pi.LoadByID("some id")
+			currentMember, found := pi.LoadByID("some id")
 			Convey("The returned member should be nil", func() {
-				So(member, ShouldBeNil)
+				So(currentMember, ShouldBeNil)
 			})
 			Convey("A second return value should indicate that the member could not be found", func() {
 				So(found, ShouldBeFalse)
@@ -50,18 +50,18 @@ func TestMemberProfileInteraction(t *testing.T) {
 			},
 		}
 		Convey("When trying to get this member profile by id", func() {
-			member, found := pi.LoadByID("existing id")
+			currentMember, found := pi.LoadByID("existing id")
 			Convey("The returned member should not be nil", func() {
-				So(member, ShouldNotBeNil)
+				So(currentMember, ShouldNotBeNil)
 			})
 			Convey("A second return value should indicate that the member could be found", func() {
 				So(found, ShouldBeTrue)
 			})
 		})
 		Convey("When trying to get another member profile by id", func() {
-			member, found := pi.LoadByID("another id")
+			currentMember, found := pi.LoadByID("another id")
 			Convey("The returned member should be nil", func() {
-				So(member, ShouldBeNil)
+				So(currentMember, ShouldBeNil)
 			})
 			Convey("A second return value should indicate that the member could not be found", func() {
 				So(found, ShouldBeFalse)
