@@ -1,12 +1,13 @@
-package test
+// +build io
+
+package githubaccount
 
 // Call tests with local env variables set like:
-// GITHUB_TOKEN="..." GITHUB_LOGIN="..." GITHUB_EMAIL="..." go test ./io/githubstats/...
+// GITHUB_TOKEN="..." GITHUB_LOGIN="..." GITHUB_EMAIL="..." go test ./...
 import (
 	"os"
 	"testing"
 
-	"github.com/aweisser/ocg-poc/io/githubaccount"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -16,7 +17,7 @@ func TestGitHubStatsClient(t *testing.T) {
 		token := "invalid token"
 
 		Convey("When creating a StatsClient", func() {
-			client, err := githubaccount.NewClient(token)
+			client, err := NewClient(token)
 
 			Convey("An error should be returned", func() {
 				So(err, ShouldNotBeNil)
@@ -35,12 +36,12 @@ func TestGitHubStatsClient(t *testing.T) {
 		So(token, ShouldNotBeEmpty)
 		So(login, ShouldNotBeEmpty)
 
-		client, err := githubaccount.NewClient(token)
+		client, err := NewClient(token)
 		So(err, ShouldBeNil)
 		So(client, ShouldNotBeNil)
 
 		Convey("When requesting the users GitHub stats", func() {
-			stats, err := githubaccount.StatsOf(client)
+			stats, err := StatsOf(client)
 
 			Convey("No error is returned", func() {
 				So(err, ShouldBeNil)

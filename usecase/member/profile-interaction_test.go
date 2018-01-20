@@ -1,10 +1,9 @@
-package test
+package member
 
 import (
 	"testing"
 
 	"github.com/aweisser/ocg-poc/domain/ocg"
-	"github.com/aweisser/ocg-poc/usecase/member"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -19,7 +18,7 @@ func (r *testRepo) GetMemberByID(id interface{}) *ocg.Member {
 func TestMemberProfileInteraction(t *testing.T) {
 
 	Convey("Given an empty repository", t, func() {
-		pi := member.ProfileInteraction{
+		pi := ProfileInteraction{
 			MemberRepo: &testRepo{
 				byID: func(id interface{}) *ocg.Member {
 					return nil
@@ -38,7 +37,7 @@ func TestMemberProfileInteraction(t *testing.T) {
 	})
 
 	Convey("Given a repository with an existing member", t, func() {
-		pi := member.ProfileInteraction{
+		pi := ProfileInteraction{
 			MemberRepo: &testRepo{
 				byID: func(id interface{}) *ocg.Member {
 					if id == "existing id" {
