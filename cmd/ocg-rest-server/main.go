@@ -38,7 +38,8 @@ func main() {
 
 }
 
-// newRestServerContext creates a context for the OCG Rest Server where all necessary business services are injected.
+// newRestServerContext creates a context for the
+// OCG Rest Server where all necessary business services are injected.
 func newRestServerContext(parentCtx context.Context) context.Context {
 	return context.WithValue(parentCtx, rest.MemberProfileKey,
 		&member.ProfileInteraction{
