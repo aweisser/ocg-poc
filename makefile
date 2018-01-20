@@ -6,7 +6,7 @@ test:
 	go test -v -cover ./...
 
 lint:
-	gometalinter --config=.gometalinter.json `find . -not -path "./vendor" -not -path "./vendor/*" -type d`
+	gometalinter --config=.gometalinter.json `find . -not -path "./vendor" -not -path "./vendor/*" -not -path "./io/rest/*" -type d`
 
 clean:
 	go clean
