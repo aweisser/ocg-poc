@@ -11,7 +11,6 @@ lint:
 clean:
 	go clean
 	rm -f $(BINARY_NAME_LINUX)
-	rm -f $(BINARY_NAME_WINDOWS)
 
 linux:
 	GOOS=linux GOARCH=amd64 go build -o '$(BINARY_NAME_LINUX)' ./cmd/ocg-rest-server/main.go
@@ -25,4 +24,4 @@ deps:
 	gometalinter --install
 
 
-.PHONY test lint clean windows linux release:
+.PHONY test lint clean linux release:
