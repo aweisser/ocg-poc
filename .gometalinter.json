@@ -22,6 +22,8 @@
   ],
   "LineLength": 100,
   "Exclude": [
-    ".*_moq_test.go"
+    ".*_moq_test.go",
+    "exported (\\w+) should have comment or be unexported",
+    "comment on exported (\\w+) should be of the form (\\w+)"
   ]
 }
