@@ -1,10 +1,12 @@
 BINARY_NAME_LINUX=ocg-rest-linux-amd64
-BINARY_NAME_WINDOWS=ocg-rest-windows-amd64
 
-default: clean deps test release
+default: clean deps test lint release
 
 test:
 	go test -v -cover ./...
+
+lint:
+	gometalinter --config=.gometalinter.json `find . -not -path "./vendor" -not -path "./vendor/*" -type d`
 
 clean:
 	go clean
@@ -14,13 +16,11 @@ clean:
 linux:
 	GOOS=linux GOARCH=amd64 go build -o '$(BINARY_NAME_LINUX)' ./cmd/ocg-rest-server/main.go
 
-windows:
-	GOOS=windows GOARCH=amd64 go build -o '$(BINARY_NAME_WINDOWS)' ./cmd/ocg-rest-server/main.go
-
-release: windows linux
+release: linux
 
 deps:
 	go get github.com/golang/dep/cmd/dep
+	go get github.com/alecthomas/gometalinter
 	dep ensure
 
-.PHONY test clean windows linux release:
+.PHONY test lint clean windows linux release:
