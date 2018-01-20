@@ -10,17 +10,7 @@ import (
 func TestImmutableCertificate(t *testing.T) {
 
 	Convey("Given a certificate that is already assigned", t, func() {
-		cert := Certificate{ownerID: ID("User1")}
-		Convey("When trying to assign a new owner", func() {
-			err := cert.AssignTo(ID("User2"))
-			Convey("An error should be returned", func() {
-				So(err, ShouldNotBeNil)
-			})
-		})
-	})
-
-	Convey("Given a certificate that is already assigned", t, func() {
-		cert := Certificate{ownerID: ID("User1")}
+		cert := ActivityCertificate{ownerID: ID("User1")}
 		Convey("When trying to assign a new owner", func() {
 			err := cert.AssignTo(ID("User2"))
 			Convey("An error should be returned", func() {
@@ -30,7 +20,7 @@ func TestImmutableCertificate(t *testing.T) {
 	})
 
 	Convey("Given a certificate that is not asssigned yet", t, func() {
-		cert := Certificate{}
+		cert := ActivityCertificate{}
 		Convey("Assigning it to an owner", func() {
 			err := cert.AssignTo(ID("User1"))
 			Convey("Should not return an error", func() {
@@ -54,7 +44,7 @@ func TestImmutableCertificate(t *testing.T) {
 			To:       originalTo,
 			category: originalCat,
 		}
-		cert := Certificate{
+		cert := ActivityCertificate{
 			activity: originalActivity,
 		}
 		Convey("When trying to change the attributes of the activity", func() {
@@ -85,7 +75,7 @@ func TestCertificateFactory(t *testing.T) {
 
 	Convey("Given a Certificate with an Activity, prefilled with category C1", t, func() {
 		originalActivity := &Activity{Name: "Original Name", category: "Preset category", From: time.Now(), To: time.Now()}
-		cert, _ := NewCertificate("Certified category", originalActivity)
+		cert, _ := NewActivityCertificate("Certified category", originalActivity)
 		Convey("The certified activity", func() {
 			certifiedActivity := cert.Activity()
 			Convey("Should not contain the preset category", func() {
@@ -102,7 +92,7 @@ func TestCertificateFactory(t *testing.T) {
 	})
 
 	Convey("Given a Certificate with an Activity having an empty category", t, func() {
-		cert, _ := NewCertificate("Certified category", &Activity{From: time.Now(), To: time.Now()})
+		cert, _ := NewActivityCertificate("Certified category", &Activity{From: time.Now(), To: time.Now()})
 		Convey("The category of the certified activity", func() {
 			certifiedActivity := cert.Activity()
 			Convey("Should not be empty", func() {
@@ -114,7 +104,7 @@ func TestCertificateFactory(t *testing.T) {
 
 	Convey("Giving a nil Activity", t, func() {
 		Convey("When trying to create a Certificate", func() {
-			_, err := NewCertificate("Certified category", nil)
+			_, err := NewActivityCertificate("Certified category", nil)
 			Convey("An error should be returned", func() {
 				So(err, ShouldNotBeNil)
 			})
@@ -127,7 +117,7 @@ func TestCertificateFactory(t *testing.T) {
 			category: "A Category",
 		}
 		Convey("When trying to create a Certificate", func() {
-			_, err := NewCertificate("Certified category", a)
+			_, err := NewActivityCertificate("Certified category", a)
 			Convey("An error should be returned", func() {
 				So(err, ShouldNotBeNil)
 			})
@@ -136,8 +126,8 @@ func TestCertificateFactory(t *testing.T) {
 
 	Convey("Given two Certificates", t, func() {
 		a := Activity{Name: "Original Name", From: time.Now(), To: time.Now()}
-		cert1, _ := NewCertificate("Certified category", &a)
-		cert2, _ := NewCertificate("Certified category", &a)
+		cert1, _ := NewActivityCertificate("Certified category", &a)
+		cert2, _ := NewActivityCertificate("Certified category", &a)
 		Convey("The two IDs", func() {
 			id1 := cert1.id
 			id2 := cert2.id
