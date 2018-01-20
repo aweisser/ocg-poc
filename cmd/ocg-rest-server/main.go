@@ -1,5 +1,3 @@
-//go:generate goagen bootstrap -d github.com/aweisser/ocg-poc/cmd/ocg-rest-server/design
-
 package main
 
 import (
