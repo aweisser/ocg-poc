@@ -20,6 +20,7 @@ release: linux
 deps:
 	go get github.com/golang/dep/cmd/dep
 	go get github.com/alecthomas/gometalinter
+	go get github.com/goadesign/goa
 	dep ensure
 	gometalinter --install
 
