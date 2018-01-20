@@ -1,6 +1,6 @@
 BINARY_NAME_LINUX=ocg-rest-linux-amd64
 
-default: clean deps test lint release
+default: clean deps generate test lint release
 
 test:
 	go test -v -cover ./...
@@ -18,10 +18,13 @@ linux:
 release: linux
 
 deps:
-	go get github.com/golang/dep/cmd/dep
-	go get github.com/alecthomas/gometalinter
+	go get -u github.com/golang/dep/cmd/dep
+	go get -u github.com/alecthomas/gometalinter
+	go get -u github.com/goadesign/goa/...
 	dep ensure
 	gometalinter --install
 
+generate:
+	go generate ./...
 
-.PHONY test lint clean linux release:
+.PHONY test lint clean linux deps generate release:
