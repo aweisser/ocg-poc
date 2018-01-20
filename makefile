@@ -22,5 +22,7 @@ deps:
 	go get github.com/golang/dep/cmd/dep
 	go get github.com/alecthomas/gometalinter
 	dep ensure
+	gometalinter --install
+
 
 .PHONY test lint clean windows linux release:
