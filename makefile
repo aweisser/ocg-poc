@@ -7,7 +7,7 @@ test:
 
 lint:
 	gometalinter --config=.gometalinter.json `find . -not -path "./vendor" -not -path "./vendor/*" -not -path "./io/rest/*" -type d`
-
+	lll --goonly --maxlength 100 --exclude "//go:generate" . --skiplist app design vendor .git
 clean:
 	go clean
 	rm -f $(BINARY_NAME_LINUX)
