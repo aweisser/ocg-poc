@@ -1,9 +1,5 @@
 
 [[constraint]]
-  name = "github.com/stretchr/testify"
-  version = "*"
-
-[[constraint]]
   name = "github.com/goadesign/goa"
   version = "v1.3.1"
 
