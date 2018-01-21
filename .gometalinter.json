@@ -10,7 +10,6 @@
     "gotypex",
     "ineffassign",
     "interfacer",
-    "lll",
     "maligned",
     "megacheck",
     "misspell",
@@ -20,7 +19,6 @@
     "vet",
     "vetshadow"
   ],
-  "LineLength": 100,
   "Exclude": [
     ".*_moq_test.go"
   ]
