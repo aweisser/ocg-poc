@@ -2,16 +2,26 @@
 
 
 [[projects]]
+  name = "cloud.google.com/go"
+  packages = ["compute/metadata"]
+  revision = "767c40d6a2e058483c25fa193e963a22da17236d"
+  version = "v0.18.0"
+
+[[projects]]
   branch = "master"
   name = "github.com/armon/go-metrics"
   packages = ["."]
   revision = "7aa49fde808223f8dadfdbfd3a20ff6c19e5f9ec"
 
 [[projects]]
-  name = "github.com/davecgh/go-spew"
-  packages = ["spew"]
-  revision = "346938d642f2ec3594ed81d874461961cd0faa76"
-  version = "v1.1.0"
+  branch = "master"
+  name = "github.com/danilopolani/gocialite"
+  packages = [
+    ".",
+    "drivers",
+    "structs"
+  ]
+  revision = "7413dba6be6d929e8a58a861fcd1e62e1a1fd589"
 
 [[projects]]
   branch = "master"
@@ -90,12 +100,6 @@
   revision = "9fbc68a78c4dbc7914e1a23f88f126bea4383b97"
 
 [[projects]]
-  name = "github.com/pmezard/go-difflib"
-  packages = ["difflib"]
-  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
-  version = "v1.0.0"
-
-[[projects]]
   branch = "master"
   name = "github.com/satori/go.uuid"
   packages = ["."]
@@ -144,12 +148,6 @@
   version = "1.6.3"
 
 [[projects]]
-  name = "github.com/stretchr/testify"
-  packages = ["assert"]
-  revision = "b91bfb9ebec76498946beb6af7c0230c7cc7ba6c"
-  version = "v1.2.0"
-
-[[projects]]
   branch = "master"
   name = "github.com/zach-klippenstein/goregen"
   packages = ["."]
@@ -170,17 +168,30 @@
   name = "golang.org/x/oauth2"
   packages = [
     ".",
-    "internal"
+    "amazon",
+    "bitbucket",
+    "facebook",
+    "foursquare",
+    "github",
+    "google",
+    "internal",
+    "jws",
+    "jwt",
+    "linkedin",
+    "slack"
   ]
   revision = "30785a2c434e431ef7c507b54617d6a951d5f2b4"
 
 [[projects]]
   name = "google.golang.org/appengine"
   packages = [
+    ".",
     "internal",
+    "internal/app_identity",
     "internal/base",
     "internal/datastore",
     "internal/log",
+    "internal/modules",
     "internal/remote_api",
     "internal/urlfetch",
     "urlfetch"
@@ -188,9 +199,15 @@
   revision = "150dc57a1b433e64154302bdc40b6bb8aefa313a"
   version = "v1.0.0"
 
+[[projects]]
+  name = "gopkg.in/oleiade/reflections.v1"
+  packages = ["."]
+  revision = "2b6ec3da648e3e834dc41bad8d9ed7f2dc6a9496"
+  version = "v1.0.0"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "14a52044419a04b415d9719c0eb4e9807902365acdaade467153e94dcfcd62ed"
+  inputs-digest = "6b52ffb50cde66235916cbf5d09b4ace571d93e90cdecc28c8eba240e28bd647"
   solver-name = "gps-cdcl"
   solver-version = 1

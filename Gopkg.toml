@@ -38,3 +38,7 @@
 [[constraint]]
   name = "github.com/google/go-github"
   branch = "master"
+
+[[constraint]]
+  name = "gopkg.in/danilopolani/gocialite.v0"
+  branch = "master"  
