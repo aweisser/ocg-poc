@@ -1,0 +1,242 @@
+<!-- Original Source from https://s.bootsnipp.com/iframe/kMdg -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>Social network login - Bootsnipp.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <style type="text/css">
+    @import url(http://weloveiconfonts.com/api/?family=brandico|entypo|openwebicons|zocial);
+
+/* brandico */
+[class*="brandico-"]:before {
+  font-family: 'brandico', sans-serif;
+}
+
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+/* openwebicons */
+[class*="openwebicons-"]:before {
+  font-family: 'OpenWeb Icons', sans-serif;
+}
+
+/* zocial */
+[class*="zocial-"]:before {
+  font-family: 'zocial', sans-serif;
+}
+
+.form-signin{
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+
+.login-input {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.login-input-pass {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+.signup-input {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.signup-input-confirm {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
+.create-account {
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.btn-center{
+  width: 50%;
+  text-align: center;
+  margin: inherit;
+}
+
+.social-login-btn {
+  margin: 5px;
+  width: 20%;
+  font-size: 250%;
+  padding: 0;
+}
+
+.social-login-more {
+  width: 45%;
+}
+
+.social-google {
+  background-color: #da573b;
+  border-color: #be5238;
+}
+.social-google:hover{
+  background-color: #be5238;
+  border-color: #9b4631;
+}
+
+.social-twitter {
+  background-color: #1daee3;
+  border-color: #3997ba;
+}
+.social-twitter:hover {
+  background-color: #3997ba;
+  border-color: #347b95;
+}
+
+.social-facebook {
+  background-color: #4c699e;
+  border-color: #47618d;
+}
+.social-facebook:hover {
+  background-color: #47618d;
+  border-color: #3c5173;
+}
+
+.social-github {
+  background-color: #444444;
+  border-color: #444444;
+}
+.social-github:hover {
+  background-color: #2b2b2b;
+  border-color: #2b2b2b;
+}
+
+.social-bitbucket {
+  background-color: #205081;
+  border-color: #205081;
+}
+.social-bitbucket:hover {
+  background-color: #163758;
+  border-color: #163758;
+}
+
+.social-meetup {
+  background-color: #ed1c40;
+  border-color: #ed1c40;
+}
+.social-meetup:hover {
+  background-color: #9f191f;
+  border-color: #9f191f;
+}
+
+.social-medium {
+  background-color: #1C9963 ;
+  border-color: #1C9963 ;
+}
+.social-medium:hover {
+  background-color: #03a87c;
+  border-color: #03a87c;
+}
+
+.social-slack {
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+.social-slack:hover {
+  background-color: #47a447;
+  border-color: #47a447;
+}
+
+.social-stackexchange {
+  background-color: #366FB3;
+  border-color: #366FB3;
+}
+.social-stackexchange:hover {
+  background-color: #12457C;
+  border-color: #12457C;
+}
+
+.social-linkedin {
+  background-color: #4875B4;
+  border-color: #466b99;
+}
+.social-linkedin:hover {
+  background-color: #466b99;
+  border-color: #3b5a7c;
+}
+    </style>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        window.alert = function(){};
+        var defaultCSS = document.getElementById('bootstrap-css');
+        function changeCSS(css){
+            if(css) $('head > link').filter(':first').replaceWith('<link rel="stylesheet" href="'+ css +'" type="text/css" />'); 
+            else $('head > link').filter(':first').replaceWith(defaultCSS); 
+        }
+        $( document ).ready(function() {
+          var iframe_height = parseInt($('html').height()); 
+          window.parent.postMessage( iframe_height, 'https://bootsnipp.com');
+        });
+    </script>
+</head>
+<body>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+
+<div class="container">
+      
+      <script id="metamorph-1-start" type="text/x-placeholder"></script><script id="metamorph-21-start" type="text/x-placeholder"></script>
+
+	<div class="container text-center">
+	    <form class="form-signin" data-ember-action="2">
+	    	<h2 class="form-signin-heading">Sign in</h2>
+
+			<small class="text-muted">Connect OCG with your favorite social network</small>
+			<br><br>
+
+			
+<p>
+    <a class="btn btn-primary social-login-btn social-github" href="/auth/github"><i class="fa fa-github"></i></a>
+    <a class="disabled btn btn-primary social-login-btn social-bitbucket" href="/auth/bitbucket"><i class="fa fa-bitbucket"></i></a>
+</p>
+<p>
+    <a class="disabled btn btn-primary social-login-btn social-slack" href="/auth/slack"><i class="fa fa-slack"></i></a>
+    <a class="disabled btn btn-primary social-login-btn social-google" href="/auth/google"><i class="fa fa-google-plus"></i></a>
+</p>
+<p>
+    <a class="disabled btn btn-primary social-login-btn social-meetup" href="/auth/meetup"><i class="fa fa-meetup"></i></a>
+    <a class="btn btn-primary social-login-btn social-stackexchange" href="/auth/stackexchange"><i class="fa fa-stack-exchange"></i></a>
+</p>
+<p>
+    <a class="btn btn-primary social-login-btn social-medium" href="/auth/medium"><i class="fa fa-medium"></i></a>
+    <a class="disabled btn btn-primary social-login-btn social-twitter" href="/auth/twitter"><i class="fa fa-twitter"></i></a>
+</p>
+        </form>
+    </div>
+	<script type="text/javascript">
+	
+	</script>
+</body>
+</html>

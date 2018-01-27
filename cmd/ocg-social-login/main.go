@@ -11,20 +11,29 @@ import (
 
 var gocial = gocialite.NewDispatcher()
 
+const redirectURL = "http://ocg.intern:9090/auth/callback"
+
 // Call with two env params GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET.
 // Create Client-ID and Secret via GitHub OAuth Apps in Developer Settings
 // GITHUB_CLIENT_ID="xxxxxxxxxxxxx" GITHUB_CLIENT_SECRET="xxxxxxxxxxxxxxxxxxxxxxxxxx" go run main.go
 func main() {
-	http.HandleFunc("/", rootHandler)
+	fs := http.FileServer(http.Dir("static"))
+	http.Handle("/", fs)
 	http.HandleFunc("/auth/github", redirectHandlerGithub)
+	http.HandleFunc("/auth/bitbucket", notImplemented)
+	http.HandleFunc("/auth/slack", notImplemented)
+	http.HandleFunc("/auth/google", notImplemented)
+	http.HandleFunc("/auth/meetup", notImplemented)
 	http.HandleFunc("/auth/stackexchange", redirectHandlerStackexchange)
 	http.HandleFunc("/auth/medium", redirectHandlerMedium)
+	http.HandleFunc("/auth/twitter", notImplemented)
 	http.HandleFunc("/auth/callback", callbackHandler)
 	http.ListenAndServe(":9090", nil)
 }
 
-func rootHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Social Logins"))
+func notImplemented(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("Error: Sorry. Not implemented yet"))
+	return
 }
 
 // Redirect to correct oAuth URL
@@ -36,9 +45,9 @@ func redirectHandlerGithub(w http.ResponseWriter, r *http.Request) {
 		Driver("github").                 // Set provider
 		Scopes([]string{"repo", "user"}). // Set optional scope(s)
 		Redirect(                         //
-			clientID,                               // Client ID
-			clientSecret,                           // Client Secret
-			"http://ocg.intern:9090/auth/callback", // Redirect URL
+			clientID,     // Client ID
+			clientSecret, // Client Secret
+			redirectURL,  // Redirect URL
 		)
 
 	// Check for errors (usually driver not valid)
@@ -60,9 +69,9 @@ func redirectHandlerStackexchange(w http.ResponseWriter, r *http.Request) {
 		Driver(sociallogin.StackexchangeDriverName). // Set provider
 		Scopes([]string{"private_info"}).            // Set optional scope(s)
 		Redirect(                                    //
-			clientID,                               // Client ID
-			clientSecret,                           // Client Secret
-			"http://ocg.intern:9090/auth/callback", // Redirect URL
+			clientID,     // Client ID
+			clientSecret, // Client Secret
+			redirectURL,  // Redirect URL
 		)
 
 	// Check for errors (usually driver not valid)
@@ -84,9 +93,9 @@ func redirectHandlerMedium(w http.ResponseWriter, r *http.Request) {
 		Driver(sociallogin.MediumDriverName).              // Set provider
 		Scopes([]string{"basicProfile,listPublications"}). // Set optional scope(s)
 		Redirect(                                          //
-			clientID,                               // Client ID
-			clientSecret,                           // Client Secret
-			"http://ocg.intern:9090/auth/callback", // Redirect URL
+			clientID,     // Client ID
+			clientSecret, // Client Secret
+			redirectURL,  // Redirect URL
 		)
 
 	// Check for errors (usually driver not valid)
@@ -121,20 +130,6 @@ func callbackHandler(w http.ResponseWriter, r *http.Request) {
 	// Print in terminal user information
 	fmt.Printf("%#v", token)
 	fmt.Printf("%#v", user)
-
-	// Use the AccessToken to call the GitHub REST and GraphQL API
-	/*client, err2 := githubaccount.NewClient(token.AccessToken)
-	if err2 != nil {
-		w.Write([]byte("Error: " + err2.Error()))
-		return
-	}
-	stats, err3 := githubaccount.StatsOf(client)
-	if err3 != nil {
-		w.Write([]byte("Error: " + err3.Error()))
-		return
-	}
-	w.Write([]byte("Stats: " + *stats.Login + "\n"))
-	*/
 
 	// If no errors, show provider name and stats
 	w.Write([]byte("Hi, " + user.FullName + "\n"))
