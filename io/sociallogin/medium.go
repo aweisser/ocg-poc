@@ -8,9 +8,10 @@ import (
 	"golang.org/x/oauth2"
 )
 
+// MediumDriverName under which the driver is registered
 const MediumDriverName = "medium"
 
-// Endpoint is Mediums's explicit OAuth 2.0 endpoint.
+// MediumEndpoint is Mediums's explicit OAuth 2.0 endpoint.
 // https://github.com/Medium/medium-api-docs/blob/master/README.md#21-browser-based-authentication
 var MediumEndpoint = oauth2.Endpoint{
 	AuthURL:  "https://medium.com/m/oauth/authorize",

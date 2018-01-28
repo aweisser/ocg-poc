@@ -8,9 +8,10 @@ import (
 	"golang.org/x/oauth2"
 )
 
+// StackexchangeDriverName under which the driver is registered
 const StackexchangeDriverName = "stackexchange"
 
-// Endpoint is Stackexchange's implicit OAuth 2.0 endpoint.
+// StackExchangeEndpoint is Stackexchange's implicit OAuth 2.0 endpoint.
 // See https://api.stackexchange.com/docs/authentication for more information.
 var StackExchangeEndpoint = oauth2.Endpoint{
 	AuthURL:  "https://stackexchange.com/oauth",
@@ -26,7 +27,6 @@ func init() {
 		StackexchangeAPIMap,
 		StackexchangeUserMap,
 	)
-	//registerDriver(stackexchangeDriverName, StackexchangeDefaultScopes, StackexchangeUserFn, StackExchangeEndpoint, StackexchangeAPIMap, StackexchangeUserMap)
 }
 
 // StackexchangeUserMap is the map to create the User struct
